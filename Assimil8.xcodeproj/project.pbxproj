@@ -1,0 +1,593 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		07E16B4022F49E81008C1C52 /* ChannelConfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E16B3F22F49E81008C1C52 /* ChannelConfigViewController.swift */; };
+		CB57D94C22DA4CAB00A62DA7 /* ZoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB57D94B22DA4CAB00A62DA7 /* ZoneViewController.swift */; };
+		CBF1333A22D0A87200A68F97 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF1333922D0A87200A68F97 /* AppDelegate.swift */; };
+		CBF1333C22D0A87200A68F97 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF1333B22D0A87200A68F97 /* ViewController.swift */; };
+		CBF1333E22D0A87300A68F97 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBF1333D22D0A87300A68F97 /* Assets.xcassets */; };
+		CBF1334122D0A87300A68F97 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBF1333F22D0A87300A68F97 /* Main.storyboard */; };
+		CBF1334D22D0A87400A68F97 /* Assimil8Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF1334C22D0A87400A68F97 /* Assimil8Tests.swift */; };
+		CBF1335822D0A87400A68F97 /* Assimil8UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF1335722D0A87400A68F97 /* Assimil8UITests.swift */; };
+		CBF1336622D1328A00A68F97 /* DragView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF1336522D1328A00A68F97 /* DragView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CBF1334922D0A87400A68F97 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CBF1332E22D0A87200A68F97 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CBF1333522D0A87200A68F97;
+			remoteInfo = Assimil8;
+		};
+		CBF1335422D0A87400A68F97 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CBF1332E22D0A87200A68F97 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CBF1333522D0A87200A68F97;
+			remoteInfo = Assimil8;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		07E16B3F22F49E81008C1C52 /* ChannelConfigViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelConfigViewController.swift; sourceTree = "<group>"; };
+		CB57D94B22DA4CAB00A62DA7 /* ZoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoneViewController.swift; sourceTree = "<group>"; };
+		CBF1333622D0A87200A68F97 /* Assimil8.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Assimil8.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CBF1333922D0A87200A68F97 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CBF1333B22D0A87200A68F97 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CBF1333D22D0A87300A68F97 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CBF1334022D0A87300A68F97 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CBF1334222D0A87300A68F97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CBF1334322D0A87300A68F97 /* Assimil8.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Assimil8.entitlements; sourceTree = "<group>"; };
+		CBF1334822D0A87400A68F97 /* Assimil8Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Assimil8Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CBF1334C22D0A87400A68F97 /* Assimil8Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assimil8Tests.swift; sourceTree = "<group>"; };
+		CBF1334E22D0A87400A68F97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CBF1335322D0A87400A68F97 /* Assimil8UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Assimil8UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CBF1335722D0A87400A68F97 /* Assimil8UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assimil8UITests.swift; sourceTree = "<group>"; };
+		CBF1335922D0A87400A68F97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CBF1336522D1328A00A68F97 /* DragView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CBF1333322D0A87200A68F97 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CBF1334522D0A87400A68F97 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CBF1335022D0A87400A68F97 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CBF1332D22D0A87200A68F97 = {
+			isa = PBXGroup;
+			children = (
+				CBF1333822D0A87200A68F97 /* Assimil8 */,
+				CBF1334B22D0A87400A68F97 /* Assimil8Tests */,
+				CBF1335622D0A87400A68F97 /* Assimil8UITests */,
+				CBF1333722D0A87200A68F97 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CBF1333722D0A87200A68F97 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CBF1333622D0A87200A68F97 /* Assimil8.app */,
+				CBF1334822D0A87400A68F97 /* Assimil8Tests.xctest */,
+				CBF1335322D0A87400A68F97 /* Assimil8UITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CBF1333822D0A87200A68F97 /* Assimil8 */ = {
+			isa = PBXGroup;
+			children = (
+				CB57D94B22DA4CAB00A62DA7 /* ZoneViewController.swift */,
+				CBF1333922D0A87200A68F97 /* AppDelegate.swift */,
+				CBF1333B22D0A87200A68F97 /* ViewController.swift */,
+				CBF1333D22D0A87300A68F97 /* Assets.xcassets */,
+				CBF1333F22D0A87300A68F97 /* Main.storyboard */,
+				CBF1334222D0A87300A68F97 /* Info.plist */,
+				CBF1334322D0A87300A68F97 /* Assimil8.entitlements */,
+				CBF1336522D1328A00A68F97 /* DragView.swift */,
+				07E16B3F22F49E81008C1C52 /* ChannelConfigViewController.swift */,
+			);
+			path = Assimil8;
+			sourceTree = "<group>";
+		};
+		CBF1334B22D0A87400A68F97 /* Assimil8Tests */ = {
+			isa = PBXGroup;
+			children = (
+				CBF1334C22D0A87400A68F97 /* Assimil8Tests.swift */,
+				CBF1334E22D0A87400A68F97 /* Info.plist */,
+			);
+			path = Assimil8Tests;
+			sourceTree = "<group>";
+		};
+		CBF1335622D0A87400A68F97 /* Assimil8UITests */ = {
+			isa = PBXGroup;
+			children = (
+				CBF1335722D0A87400A68F97 /* Assimil8UITests.swift */,
+				CBF1335922D0A87400A68F97 /* Info.plist */,
+			);
+			path = Assimil8UITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CBF1333522D0A87200A68F97 /* Assimil8 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CBF1335C22D0A87400A68F97 /* Build configuration list for PBXNativeTarget "Assimil8" */;
+			buildPhases = (
+				CBF1333222D0A87200A68F97 /* Sources */,
+				CBF1333322D0A87200A68F97 /* Frameworks */,
+				CBF1333422D0A87200A68F97 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Assimil8;
+			productName = Assimil8;
+			productReference = CBF1333622D0A87200A68F97 /* Assimil8.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CBF1334722D0A87400A68F97 /* Assimil8Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CBF1335F22D0A87400A68F97 /* Build configuration list for PBXNativeTarget "Assimil8Tests" */;
+			buildPhases = (
+				CBF1334422D0A87400A68F97 /* Sources */,
+				CBF1334522D0A87400A68F97 /* Frameworks */,
+				CBF1334622D0A87400A68F97 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CBF1334A22D0A87400A68F97 /* PBXTargetDependency */,
+			);
+			name = Assimil8Tests;
+			productName = Assimil8Tests;
+			productReference = CBF1334822D0A87400A68F97 /* Assimil8Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CBF1335222D0A87400A68F97 /* Assimil8UITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CBF1336222D0A87400A68F97 /* Build configuration list for PBXNativeTarget "Assimil8UITests" */;
+			buildPhases = (
+				CBF1334F22D0A87400A68F97 /* Sources */,
+				CBF1335022D0A87400A68F97 /* Frameworks */,
+				CBF1335122D0A87400A68F97 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CBF1335522D0A87400A68F97 /* PBXTargetDependency */,
+			);
+			name = Assimil8UITests;
+			productName = Assimil8UITests;
+			productReference = CBF1335322D0A87400A68F97 /* Assimil8UITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CBF1332E22D0A87200A68F97 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = "Alan O'Leary";
+				TargetAttributes = {
+					CBF1333522D0A87200A68F97 = {
+						CreatedOnToolsVersion = 10.2.1;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 0;
+							};
+						};
+					};
+					CBF1334722D0A87400A68F97 = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = CBF1333522D0A87200A68F97;
+					};
+					CBF1335222D0A87400A68F97 = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = CBF1333522D0A87200A68F97;
+					};
+				};
+			};
+			buildConfigurationList = CBF1333122D0A87200A68F97 /* Build configuration list for PBXProject "Assimil8" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CBF1332D22D0A87200A68F97;
+			productRefGroup = CBF1333722D0A87200A68F97 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CBF1333522D0A87200A68F97 /* Assimil8 */,
+				CBF1334722D0A87400A68F97 /* Assimil8Tests */,
+				CBF1335222D0A87400A68F97 /* Assimil8UITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CBF1333422D0A87200A68F97 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CBF1333E22D0A87300A68F97 /* Assets.xcassets in Resources */,
+				CBF1334122D0A87300A68F97 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CBF1334622D0A87400A68F97 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CBF1335122D0A87400A68F97 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CBF1333222D0A87200A68F97 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CBF1333C22D0A87200A68F97 /* ViewController.swift in Sources */,
+				07E16B4022F49E81008C1C52 /* ChannelConfigViewController.swift in Sources */,
+				CBF1333A22D0A87200A68F97 /* AppDelegate.swift in Sources */,
+				CB57D94C22DA4CAB00A62DA7 /* ZoneViewController.swift in Sources */,
+				CBF1336622D1328A00A68F97 /* DragView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CBF1334422D0A87400A68F97 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CBF1334D22D0A87400A68F97 /* Assimil8Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CBF1334F22D0A87400A68F97 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CBF1335822D0A87400A68F97 /* Assimil8UITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CBF1334A22D0A87400A68F97 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CBF1333522D0A87200A68F97 /* Assimil8 */;
+			targetProxy = CBF1334922D0A87400A68F97 /* PBXContainerItemProxy */;
+		};
+		CBF1335522D0A87400A68F97 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CBF1333522D0A87200A68F97 /* Assimil8 */;
+			targetProxy = CBF1335422D0A87400A68F97 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CBF1333F22D0A87300A68F97 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CBF1334022D0A87300A68F97 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CBF1335A22D0A87400A68F97 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CBF1335B22D0A87400A68F97 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		CBF1335D22D0A87400A68F97 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Assimil8/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = com.revert.Assimil8;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		CBF1335E22D0A87400A68F97 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Assimil8/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = com.revert.Assimil8;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+		CBF1336022D0A87400A68F97 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Assimil8Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.revert.Assimil8Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Assimil8.app/Contents/MacOS/Assimil8";
+			};
+			name = Debug;
+		};
+		CBF1336122D0A87400A68F97 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Assimil8Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.revert.Assimil8Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Assimil8.app/Contents/MacOS/Assimil8";
+			};
+			name = Release;
+		};
+		CBF1336322D0A87400A68F97 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Assimil8UITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.revert.Assimil8UITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = Assimil8;
+			};
+			name = Debug;
+		};
+		CBF1336422D0A87400A68F97 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Assimil8UITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.revert.Assimil8UITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = Assimil8;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CBF1333122D0A87200A68F97 /* Build configuration list for PBXProject "Assimil8" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CBF1335A22D0A87400A68F97 /* Debug */,
+				CBF1335B22D0A87400A68F97 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CBF1335C22D0A87400A68F97 /* Build configuration list for PBXNativeTarget "Assimil8" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CBF1335D22D0A87400A68F97 /* Debug */,
+				CBF1335E22D0A87400A68F97 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CBF1335F22D0A87400A68F97 /* Build configuration list for PBXNativeTarget "Assimil8Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CBF1336022D0A87400A68F97 /* Debug */,
+				CBF1336122D0A87400A68F97 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CBF1336222D0A87400A68F97 /* Build configuration list for PBXNativeTarget "Assimil8UITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CBF1336322D0A87400A68F97 /* Debug */,
+				CBF1336422D0A87400A68F97 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CBF1332E22D0A87200A68F97 /* Project object */;
+}
