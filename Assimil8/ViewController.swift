@@ -8,6 +8,7 @@
 
 import Cocoa
 import AVFoundation
+import Yams
 
 class ViewController: NSViewController {
     
@@ -75,6 +76,7 @@ class ViewController: NSViewController {
     
     @IBOutlet weak var openPresetButton: NSButton!
     
+    var preset: Preset = Preset()
     var projectProperties: ProjectProperties!
     //var avPlayer:AVAudioPlayer = AVAudioPlayer();
 
@@ -116,8 +118,6 @@ class ViewController: NSViewController {
         imageView6.isEnabled = false
         imageView7.isEnabled = false
         imageView8.isEnabled = false
-        
-
     }
     
     override var representedObject: Any? {
@@ -125,7 +125,6 @@ class ViewController: NSViewController {
         // Update the view, if already loaded.
         }
     }
-    
     
     @IBAction func openPreset(_ sender: NSButton) {
         
@@ -136,12 +135,34 @@ class ViewController: NSViewController {
         
         // Might want to YAML Parse here
         // to preserve settings
-        let alert = NSAlert()
-        alert.alertStyle = .informational
-        alert.messageText = "Comming Soon"
-        alert.runModal()
+        let dialog = NSOpenPanel();
+        
+        dialog.title                   = "Choose a .txt file";
+        dialog.showsResizeIndicator    = true;
+        dialog.showsHiddenFiles        = false;
+        dialog.canChooseDirectories    = false;
+        dialog.canCreateDirectories    = false;
+        dialog.allowsMultipleSelection = false;
+        dialog.allowedFileTypes        = ["yml"];
+        
+        if (dialog.runModal() == NSApplication.ModalResponse.OK) {
+            let result = dialog.url // Pathname of the file
+            
+            if let path = result?.path {
+                let success = preset.parseFromFile(filePath: path)
+                print (success)
+                if (!success) {
+                    let alert = NSAlert()
+                    alert.alertStyle = .informational
+                    alert.messageText = "Failed to parse YAML preset file."
+                    alert.runModal()
+                }
+            }
+        } else {
+            // User clicked on "Cancel"
+            return
+        }
     }
-    
     
     @IBAction func closeApplication(_ sender: NSButton) {
         // Show Down Application
@@ -170,9 +191,9 @@ class ViewController: NSViewController {
         // Now have valid ccp
         
         
-        let storyboard = NSStoryboard(name: NSStoryboard.Name(rawValue: "Main"), bundle: nil)
+        let storyboard = NSStoryboard(name: "Main", bundle: nil)
         
-        let channelConfigController = storyboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "Channel Config Controller")) as! NSWindowController
+        let channelConfigController = storyboard.instantiateController(withIdentifier: "Channel Config Controller") as! NSWindowController
         
         let channelConfigWindow = channelConfigController.window
         
@@ -661,9 +682,9 @@ class ViewController: NSViewController {
     func launchZoneEditor(channelNumber: Int, czp: inout ZoneChannelProperties) {
         
         // 1
-        let storyboard = NSStoryboard(name: NSStoryboard.Name(rawValue: "Main"), bundle: nil)
+        let storyboard = NSStoryboard(name: "Main", bundle: nil)
         
-        let zoneWindowController = storyboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "Zone Window Controller")) as! NSWindowController
+        let zoneWindowController = storyboard.instantiateController(withIdentifier: "Zone Window Controller") as! NSWindowController
         
         let zoneWindow = zoneWindowController.window
         
@@ -765,16 +786,18 @@ class ViewController: NSViewController {
         audioPlayer.play()
     }
     
+    
+    //////////////////////// EXPORT CODE
+    
     @IBAction func exportButtonClick(_ sender: Any) {
         print("Export")
         
         let projectFolder = getProjectFolder()
-        if(projectFolder == nil){
+        if (projectFolder == nil) {
             return
         }
         
         // CHECK IF PROJECT NUMBER ALREADY EXISTS
- 
         let myInt = projectNumberField.integerValue
         let projectFileName = getProjectFileNameFromNumber(projectFolder: projectFolder!, projectInt: myInt)
         
@@ -1063,65 +1086,70 @@ class ViewController: NSViewController {
         projectFileStr.append("  ")
         projectFileStr.append("Name : ")
         projectFileStr.append(projectNameField.stringValue)
+        if let presetStr = preset.yamlString()
+        {
+            projectFileStr.append(presetStr);
+        }
+        
         // projectFileStr.append("\n");
         // Now loop through each channel
         
-        let c1zp = projectProperties.channel1ZoneProperties
-        if(c1zp != nil) {
-            writeChannelZonesElement(projectFileStr:&projectFileStr, zcp:c1zp!, channelNumber: 1)
-        } else if((projectProperties.channel1File) != nil){
-            writeChannelElement(projectFileStr: &projectFileStr, channelFile: projectProperties.channel1File!, channelNumber: 1)
-        }
-        
-        let c2zp = projectProperties.channel2ZoneProperties
-        if(c2zp != nil) {
-            writeChannelZonesElement(projectFileStr:&projectFileStr, zcp:c2zp!, channelNumber: 2)
-        } else if((projectProperties.channel2File) != nil){
-            writeChannelElement(projectFileStr: &projectFileStr, channelFile: projectProperties.channel2File!, channelNumber: 2)
-        }
-        
-        let c3zp = projectProperties.channel3ZoneProperties
-        if(c3zp != nil) {
-            writeChannelZonesElement(projectFileStr:&projectFileStr, zcp:c3zp!, channelNumber: 3)
-        } else if((projectProperties.channel3File) != nil){
-            writeChannelElement(projectFileStr: &projectFileStr, channelFile: projectProperties.channel3File!, channelNumber: 3)
-        }
-    
-        let c4zp = projectProperties.channel4ZoneProperties
-        if(c4zp != nil) {
-            writeChannelZonesElement(projectFileStr:&projectFileStr, zcp:c4zp!, channelNumber: 4)
-        } else if((projectProperties.channel4File) != nil){
-            writeChannelElement(projectFileStr: &projectFileStr, channelFile: projectProperties.channel4File!, channelNumber: 4)
-        }
-        
-        let c5zp = projectProperties.channel5ZoneProperties
-        if(c5zp != nil) {
-            writeChannelZonesElement(projectFileStr:&projectFileStr, zcp:c5zp!, channelNumber: 5)
-        } else if((projectProperties.channel5File) != nil){
-            writeChannelElement(projectFileStr: &projectFileStr, channelFile: projectProperties.channel5File!, channelNumber: 5)
-        }
-        
-        let c6zp = projectProperties.channel6ZoneProperties
-        if(c6zp != nil) {
-            writeChannelZonesElement(projectFileStr:&projectFileStr, zcp:c6zp!, channelNumber: 6)
-        } else if((projectProperties.channel6File) != nil){
-            writeChannelElement(projectFileStr: &projectFileStr, channelFile: projectProperties.channel6File!, channelNumber: 6)
-        }
-        
-        let c7zp = projectProperties.channel7ZoneProperties
-        if(c7zp != nil) {
-            writeChannelZonesElement(projectFileStr:&projectFileStr, zcp:c7zp!, channelNumber: 7)
-        } else if((projectProperties.channel7File) != nil){
-            writeChannelElement(projectFileStr: &projectFileStr, channelFile: projectProperties.channel7File!, channelNumber: 7)
-        }
-        
-        let c8zp = projectProperties.channel8ZoneProperties
-        if(c8zp != nil) {
-            writeChannelZonesElement(projectFileStr:&projectFileStr, zcp:c8zp!, channelNumber: 8)
-        } else if((projectProperties.channel8File) != nil){
-            writeChannelElement(projectFileStr: &projectFileStr, channelFile: projectProperties.channel8File!, channelNumber: 8)
-        }
-        
+//        let c1zp = projectProperties.channel1ZoneProperties
+//        if(c1zp != nil) {
+//            writeChannelZonesElement(projectFileStr:&projectFileStr, zcp:c1zp!, channelNumber: 1)
+//        } else if((projectProperties.channel1File) != nil){
+//            writeChannelElement(projectFileStr: &projectFileStr, channelFile: projectProperties.channel1File!, channelNumber: 1)
+//        }
+//
+//        let c2zp = projectProperties.channel2ZoneProperties
+//        if(c2zp != nil) {
+//            writeChannelZonesElement(projectFileStr:&projectFileStr, zcp:c2zp!, channelNumber: 2)
+//        } else if((projectProperties.channel2File) != nil){
+//            writeChannelElement(projectFileStr: &projectFileStr, channelFile: projectProperties.channel2File!, channelNumber: 2)
+//        }
+//
+//        let c3zp = projectProperties.channel3ZoneProperties
+//        if(c3zp != nil) {
+//            writeChannelZonesElement(projectFileStr:&projectFileStr, zcp:c3zp!, channelNumber: 3)
+//        } else if((projectProperties.channel3File) != nil){
+//            writeChannelElement(projectFileStr: &projectFileStr, channelFile: projectProperties.channel3File!, channelNumber: 3)
+//        }
+//
+//        let c4zp = projectProperties.channel4ZoneProperties
+//        if(c4zp != nil) {
+//            writeChannelZonesElement(projectFileStr:&projectFileStr, zcp:c4zp!, channelNumber: 4)
+//        } else if((projectProperties.channel4File) != nil){
+//            writeChannelElement(projectFileStr: &projectFileStr, channelFile: projectProperties.channel4File!, channelNumber: 4)
+//        }
+//
+//        let c5zp = projectProperties.channel5ZoneProperties
+//        if(c5zp != nil) {
+//            writeChannelZonesElement(projectFileStr:&projectFileStr, zcp:c5zp!, channelNumber: 5)
+//        } else if((projectProperties.channel5File) != nil){
+//            writeChannelElement(projectFileStr: &projectFileStr, channelFile: projectProperties.channel5File!, channelNumber: 5)
+//        }
+//
+//        let c6zp = projectProperties.channel6ZoneProperties
+//        if(c6zp != nil) {
+//            writeChannelZonesElement(projectFileStr:&projectFileStr, zcp:c6zp!, channelNumber: 6)
+//        } else if((projectProperties.channel6File) != nil){
+//            writeChannelElement(projectFileStr: &projectFileStr, channelFile: projectProperties.channel6File!, channelNumber: 6)
+//        }
+//
+//        let c7zp = projectProperties.channel7ZoneProperties
+//        if(c7zp != nil) {
+//            writeChannelZonesElement(projectFileStr:&projectFileStr, zcp:c7zp!, channelNumber: 7)
+//        } else if((projectProperties.channel7File) != nil){
+//            writeChannelElement(projectFileStr: &projectFileStr, channelFile: projectProperties.channel7File!, channelNumber: 7)
+//        }
+//
+//        let c8zp = projectProperties.channel8ZoneProperties
+//        if(c8zp != nil) {
+//            writeChannelZonesElement(projectFileStr:&projectFileStr, zcp:c8zp!, channelNumber: 8)
+//        } else if((projectProperties.channel8File) != nil){
+//            writeChannelElement(projectFileStr: &projectFileStr, channelFile: projectProperties.channel8File!, channelNumber: 8)
+//        }
+//
         // Now write the file to disk!
         do {
             try projectFileStr.write(to: projectFileNameURL, atomically: false, encoding: .utf8)
@@ -1133,7 +1161,6 @@ class ViewController: NSViewController {
     }
     
     func getProjectFileNameFromNumber(projectFolder: URL, projectInt: Int) -> URL {
-        
         var projectName = "prst"
         let str = NSString(format:"%03d", projectInt)
         projectName+=str as String
@@ -1143,23 +1170,19 @@ class ViewController: NSViewController {
     }
     
     func projectFileExists(projectFileURL: URL) -> Bool {
-        
         return FileManager.default.fileExists(atPath: projectFileURL.path)
     }
     
     func getProjectFolder() -> URL? {
-        
         // Now export the current settings
         let dialog = NSOpenPanel();
         dialog.title                   = "Select Project Folder";
-        
         dialog.showsResizeIndicator    = true;
         dialog.showsHiddenFiles        = false;
         dialog.canChooseFiles          = false;
         dialog.canChooseDirectories    = true;
         dialog.canCreateDirectories    = true;
         dialog.allowsMultipleSelection = false;
-        //dialog.allowedFileTypes        = ["wav"];
         
         if (dialog.runModal() == NSApplication.ModalResponse.OK) {
             let result = dialog.url // Pathname of the file
@@ -1167,13 +1190,16 @@ class ViewController: NSViewController {
             if (result != nil) {
                 print("Selected :" + result!.absoluteString)
                 return result
-                }
+            }
         }
         
         return nil
     }
     
+    /////////////////////////////////// END EXPORT
 
+    
+    /////////////////////////////////// IMPORT FILES
     //@IBAction func browseFile(sender: AnyObject) {
     @IBAction func Click(_ sender: NSButton) {
         selectChannelFile(channelNumber: 1)
@@ -1255,125 +1281,61 @@ class ViewController: NSViewController {
         
     }
     
+    func setChannelProperties(imageView: NSButtonCell, displayFileName: String) {
+        if(imageView.title == zoneTitle) {
+            // Zones have been set already, confirm with user before overwriting.
+            if (confirmReplaceZoneMode() == true){
+                return;
+            }
+        }
+        
+        imageView.isEnabled = true
+        imageView.alternateTitle = displayFileName
+        imageView.title = displayFileName
+        imageView.image = NSImage(named: "activity.png")
+        imageView.imagePosition = NSControl.ImagePosition.imageLeading
+    }
+    
     public func setFile(channelNumber: Int, fileURL: URL){
         let displayFileName = FileManager.default.displayName(atPath: fileURL.path)
         
         switch(channelNumber) {
         case 1: do {
-            
-            if(imageView1.title == zoneTitle) {
-                if (confirmReplaceZoneMode() == true){
-                    return;
-                }
-            }
-            
-            imageView1.isEnabled = true
-            imageView1.alternateTitle = displayFileName
-            imageView1.title = displayFileName
-            imageView1.image = NSImage(named: NSImage.Name(rawValue: "activity.png"))
-            imageView1.imagePosition = NSControl.ImagePosition.imageLeading
-            projectProperties.channel1File = fileURL
-            }
+            setChannelProperties(imageView: imageView1, displayFileName: displayFileName)
+            preset.contents.channel1?.zone1?.sample = fileURL.lastPathComponent
+        }
         case 2: do {
-            
-            if(imageView2.title == zoneTitle) {
-                if (confirmReplaceZoneMode() == true){
-                    return;
-                }
-            }
-            
-            imageView2.isEnabled = true
-            imageView2.alternateTitle = displayFileName
-            imageView2.title = displayFileName
-            imageView2.image = NSImage(named: NSImage.Name(rawValue: "activity.png"))
-            imageView2.imagePosition = NSControl.ImagePosition.imageLeading
-            projectProperties.channel2File = fileURL
-            }
+            setChannelProperties(imageView: imageView2, displayFileName: displayFileName)
+            preset.contents.channel2?.zone1?.sample = fileURL.lastPathComponent
+        }
         case 3: do {
-            
-            if(imageView3.title == zoneTitle) {
-                if (confirmReplaceZoneMode() == true){
-                    return;
-                }
-            }
-            imageView3.isEnabled = true
-            imageView3.alternateTitle = displayFileName
-            imageView3.title = displayFileName
-            imageView3.image = NSImage(named: NSImage.Name(rawValue: "activity.png"))
-            imageView3.imagePosition = NSControl.ImagePosition.imageLeading
-            projectProperties.channel3File = fileURL
-            }
+            setChannelProperties(imageView: imageView3, displayFileName: displayFileName)
+            preset.contents.channel3?.zone1?.sample = fileURL.lastPathComponent
+        }
         case 4: do {
-            if(imageView4.title == zoneTitle) {
-                if (confirmReplaceZoneMode() == true){
-                    return;
-                }
-            }
-            imageView4.isEnabled = true
-            imageView4.alternateTitle = displayFileName
-            imageView4.title = displayFileName
-            imageView4.image = NSImage(named: NSImage.Name(rawValue: "activity.png"))
-            imageView4.imagePosition = NSControl.ImagePosition.imageLeading
-            projectProperties.channel4File = fileURL
-            }
+            setChannelProperties(imageView: imageView4, displayFileName: displayFileName)
+            preset.contents.channel4?.zone1?.sample = fileURL.lastPathComponent
+        }
         case 5: do {
-            if(imageView5.title == zoneTitle) {
-                if (confirmReplaceZoneMode() == true){
-                    return;
-                }
-            }
-            imageView5.isEnabled = true
-            imageView5.alternateTitle = displayFileName
-            imageView5.title = displayFileName
-            imageView5.image = NSImage(named: NSImage.Name(rawValue: "activity.png"))
-            imageView5.imagePosition = NSControl.ImagePosition.imageLeading
-            projectProperties.channel5File = fileURL
-            }
+            setChannelProperties(imageView: imageView5, displayFileName: displayFileName)
+            preset.contents.channel5?.zone1?.sample = fileURL.lastPathComponent
+        }
         case 6: do {
-            if(imageView6.title == zoneTitle) {
-                if (confirmReplaceZoneMode() == true){
-                    return;
-                }
-            }
-            imageView6.isEnabled = true
-            imageView6.alternateTitle = displayFileName
-            imageView6.title = displayFileName
-            imageView6.image = NSImage(named: NSImage.Name(rawValue: "activity.png"))
-            imageView6.imagePosition = NSControl.ImagePosition.imageLeading
-            projectProperties.channel6File = fileURL
-            }
+            setChannelProperties(imageView: imageView6, displayFileName: displayFileName)
+            preset.contents.channel6?.zone1?.sample = fileURL.lastPathComponent
+        }
         case 7: do {
-            if(imageView7.title == zoneTitle) {
-                if (confirmReplaceZoneMode() == true){
-                    return;
-                }
-            }
-            imageView7.isEnabled = true
-            imageView7.alternateTitle = displayFileName
-            imageView7.title = displayFileName
-            imageView7.image = NSImage(named: NSImage.Name(rawValue: "activity.png"))
-            imageView7.imagePosition = NSControl.ImagePosition.imageLeading
-            projectProperties.channel7File = fileURL
-            }
+            setChannelProperties(imageView: imageView7, displayFileName: displayFileName)
+            preset.contents.channel7?.zone1?.sample = fileURL.lastPathComponent
+        }
         case 8: do {
-            if(imageView8.title == zoneTitle) {
-                if (confirmReplaceZoneMode() == true){
-                    return;
-                }
-            }
-            imageView8.isEnabled = true
-            imageView8.alternateTitle = displayFileName
-            imageView8.title = displayFileName
-            imageView8.image = NSImage(named: NSImage.Name(rawValue: "activity.png"))
-            imageView8.imagePosition = NSControl.ImagePosition.imageLeading
-            projectProperties.channel8File = fileURL
-            }
+            setChannelProperties(imageView: imageView8, displayFileName: displayFileName)
+            preset.contents.channel8?.zone1?.sample = fileURL.lastPathComponent
+        }
         default:
             do {}
         }
     }
-
-
 }
 
 extension ViewController: DragViewDelegate {

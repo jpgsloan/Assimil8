@@ -895,7 +895,7 @@ class ZoneViewController: NSViewController {
             enableCVRange(zoneNumber: 1)
             zone1Button.alternateTitle = displayFileName
             zone1Button.title = displayFileName
-            zone1Button.image = NSImage(named: NSImage.Name(rawValue: "activity.png"))
+            zone1Button.image = NSImage(named: "activity.png")
             zone1Button.imagePosition = NSControl.ImagePosition.imageLeading
             
             var zp = zoneChannelProperties.zone1Properties
@@ -915,7 +915,7 @@ class ZoneViewController: NSViewController {
             enableCVRange(zoneNumber: 2)
             zone2Button.alternateTitle = displayFileName
             zone2Button.title = displayFileName
-            zone2Button.image = NSImage(named: NSImage.Name(rawValue: "activity.png"))
+            zone2Button.image = NSImage(named: "activity.png")
             zone2Button.imagePosition = NSControl.ImagePosition.imageLeading
             
             var zp = zoneChannelProperties.zone2Properties
@@ -935,7 +935,7 @@ class ZoneViewController: NSViewController {
             enableCVRange(zoneNumber: 3)
             zone3Button.alternateTitle = displayFileName
             zone3Button.title = displayFileName
-            zone3Button.image = NSImage(named: NSImage.Name(rawValue: "activity.png"))
+            zone3Button.image = NSImage(named: "activity.png")
             zone3Button.imagePosition = NSControl.ImagePosition.imageLeading
             
             var zp = zoneChannelProperties.zone3Properties
@@ -955,7 +955,7 @@ class ZoneViewController: NSViewController {
             enableCVRange(zoneNumber: 4)
             zone4Button.alternateTitle = displayFileName
             zone4Button.title = displayFileName
-            zone4Button.image = NSImage(named: NSImage.Name(rawValue: "activity.png"))
+            zone4Button.image = NSImage(named: "activity.png")
             zone4Button.imagePosition = NSControl.ImagePosition.imageLeading
             
             var zp = zoneChannelProperties.zone4Properties
@@ -975,7 +975,7 @@ class ZoneViewController: NSViewController {
             enableCVRange(zoneNumber: 5)
             zone5Button.alternateTitle = displayFileName
             zone5Button.title = displayFileName
-            zone5Button.image = NSImage(named: NSImage.Name(rawValue: "activity.png"))
+            zone5Button.image = NSImage(named: "activity.png")
             zone5Button.imagePosition = NSControl.ImagePosition.imageLeading
             
             var zp = zoneChannelProperties.zone5Properties
@@ -995,7 +995,7 @@ class ZoneViewController: NSViewController {
             enableCVRange(zoneNumber: 6)
             zone6Button.alternateTitle = displayFileName
             zone6Button.title = displayFileName
-            zone6Button.image = NSImage(named: NSImage.Name(rawValue: "activity.png"))
+            zone6Button.image = NSImage(named: "activity.png")
             zone6Button.imagePosition = NSControl.ImagePosition.imageLeading
             
             var zp = zoneChannelProperties.zone6Properties
@@ -1015,7 +1015,7 @@ class ZoneViewController: NSViewController {
             enableCVRange(zoneNumber: 7)
             zone7Button.alternateTitle = displayFileName
             zone7Button.title = displayFileName
-            zone7Button.image = NSImage(named: NSImage.Name(rawValue: "activity.png"))
+            zone7Button.image = NSImage(named: "activity.png")
             zone7Button.imagePosition = NSControl.ImagePosition.imageLeading
             
             var zp = zoneChannelProperties.zone7Properties
@@ -1035,7 +1035,7 @@ class ZoneViewController: NSViewController {
             enableCVRange(zoneNumber: 8)
             zone8Button.alternateTitle = displayFileName
             zone8Button.title = displayFileName
-            zone8Button.image = NSImage(named: NSImage.Name(rawValue: "activity.png"))
+            zone8Button.image = NSImage(named: "activity.png")
             zone8Button.imagePosition = NSControl.ImagePosition.imageLeading
             
             var zp = zoneChannelProperties.zone8Properties

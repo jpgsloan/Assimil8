@@ -3,11 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		07E16B4022F49E81008C1C52 /* ChannelConfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E16B3F22F49E81008C1C52 /* ChannelConfigViewController.swift */; };
+		30E732C0188A8ADB2D59638C /* Pods_Assimil8.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 263198B354E970B8CDB7529E /* Pods_Assimil8.framework */; };
 		CB57D94C22DA4CAB00A62DA7 /* ZoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB57D94B22DA4CAB00A62DA7 /* ZoneViewController.swift */; };
 		CBF1333A22D0A87200A68F97 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF1333922D0A87200A68F97 /* AppDelegate.swift */; };
 		CBF1333C22D0A87200A68F97 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF1333B22D0A87200A68F97 /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 		CBF1334D22D0A87400A68F97 /* Assimil8Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF1334C22D0A87400A68F97 /* Assimil8Tests.swift */; };
 		CBF1335822D0A87400A68F97 /* Assimil8UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF1335722D0A87400A68F97 /* Assimil8UITests.swift */; };
 		CBF1336622D1328A00A68F97 /* DragView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF1336522D1328A00A68F97 /* DragView.swift */; };
+		EB8F19E424CC853F005EC79A /* Preset.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8F19E324CC853F005EC79A /* Preset.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +39,9 @@
 
 /* Begin PBXFileReference section */
 		07E16B3F22F49E81008C1C52 /* ChannelConfigViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelConfigViewController.swift; sourceTree = "<group>"; };
+		24B9094483CAD531E2DD7D47 /* Pods-Assimil8.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Assimil8.debug.xcconfig"; path = "Target Support Files/Pods-Assimil8/Pods-Assimil8.debug.xcconfig"; sourceTree = "<group>"; };
+		263198B354E970B8CDB7529E /* Pods_Assimil8.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Assimil8.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		719D0721B2C0331671DD77D2 /* Pods-Assimil8.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Assimil8.release.xcconfig"; path = "Target Support Files/Pods-Assimil8/Pods-Assimil8.release.xcconfig"; sourceTree = "<group>"; };
 		CB57D94B22DA4CAB00A62DA7 /* ZoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoneViewController.swift; sourceTree = "<group>"; };
 		CBF1333622D0A87200A68F97 /* Assimil8.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Assimil8.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBF1333922D0A87200A68F97 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -52,6 +57,7 @@
 		CBF1335722D0A87400A68F97 /* Assimil8UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assimil8UITests.swift; sourceTree = "<group>"; };
 		CBF1335922D0A87400A68F97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CBF1336522D1328A00A68F97 /* DragView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragView.swift; sourceTree = "<group>"; };
+		EB8F19E324CC853F005EC79A /* Preset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preset.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30E732C0188A8ADB2D59638C /* Pods_Assimil8.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +86,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		00725B729DC02E28397E40F7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				24B9094483CAD531E2DD7D47 /* Pods-Assimil8.debug.xcconfig */,
+				719D0721B2C0331671DD77D2 /* Pods-Assimil8.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		BE818DCFFF4F634B7D04B8D0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				263198B354E970B8CDB7529E /* Pods_Assimil8.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CBF1332D22D0A87200A68F97 = {
 			isa = PBXGroup;
 			children = (
@@ -86,6 +110,8 @@
 				CBF1334B22D0A87400A68F97 /* Assimil8Tests */,
 				CBF1335622D0A87400A68F97 /* Assimil8UITests */,
 				CBF1333722D0A87200A68F97 /* Products */,
+				00725B729DC02E28397E40F7 /* Pods */,
+				BE818DCFFF4F634B7D04B8D0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,6 +131,7 @@
 				CB57D94B22DA4CAB00A62DA7 /* ZoneViewController.swift */,
 				CBF1333922D0A87200A68F97 /* AppDelegate.swift */,
 				CBF1333B22D0A87200A68F97 /* ViewController.swift */,
+				EB8F19E324CC853F005EC79A /* Preset.swift */,
 				CBF1333D22D0A87300A68F97 /* Assets.xcassets */,
 				CBF1333F22D0A87300A68F97 /* Main.storyboard */,
 				CBF1334222D0A87300A68F97 /* Info.plist */,
@@ -140,9 +167,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CBF1335C22D0A87400A68F97 /* Build configuration list for PBXNativeTarget "Assimil8" */;
 			buildPhases = (
+				506510214820D23030E65155 /* [CP] Check Pods Manifest.lock */,
 				CBF1333222D0A87200A68F97 /* Sources */,
 				CBF1333322D0A87200A68F97 /* Frameworks */,
 				CBF1333422D0A87200A68F97 /* Resources */,
+				1F5FD3A08F0F9A70652A2018 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -201,6 +230,7 @@
 				TargetAttributes = {
 					CBF1333522D0A87200A68F97 = {
 						CreatedOnToolsVersion = 10.2.1;
+						LastSwiftMigration = 1020;
 						SystemCapabilities = {
 							com.apple.Sandbox = {
 								enabled = 0;
@@ -263,6 +293,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1F5FD3A08F0F9A70652A2018 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Assimil8/Pods-Assimil8-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Assimil8/Pods-Assimil8-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Assimil8/Pods-Assimil8-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		506510214820D23030E65155 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Assimil8-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CBF1333222D0A87200A68F97 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -272,6 +344,7 @@
 				07E16B4022F49E81008C1C52 /* ChannelConfigViewController.swift in Sources */,
 				CBF1333A22D0A87200A68F97 /* AppDelegate.swift in Sources */,
 				CB57D94C22DA4CAB00A62DA7 /* ZoneViewController.swift in Sources */,
+				EB8F19E424CC853F005EC79A /* Preset.swift in Sources */,
 				CBF1336622D1328A00A68F97 /* DragView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -436,6 +509,7 @@
 		};
 		CBF1335D22D0A87400A68F97 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24B9094483CAD531E2DD7D47 /* Pods-Assimil8.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -445,15 +519,16 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = com.revert.Assimil8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
 		CBF1335E22D0A87400A68F97 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 719D0721B2C0331671DD77D2 /* Pods-Assimil8.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -463,10 +538,10 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = com.revert.Assimil8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
